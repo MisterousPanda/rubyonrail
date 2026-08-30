@@ -55,7 +55,13 @@ export default function HomePage() {
             href="/rails"
             className="border border-ink/20 px-5 py-2.5 font-mono text-[11px] tracking-[0.18em] text-ink uppercase hover:border-ruby hover:text-ruby"
           >
-            Read Rails
+            Why Rails
+          </Link>
+          <Link
+            href="/deploy"
+            className="border border-ruby/40 px-5 py-2.5 font-mono text-[11px] tracking-[0.18em] text-ruby uppercase hover:bg-ruby hover:text-paper"
+          >
+            Rails on Vercel? No
           </Link>
         </div>
       </section>

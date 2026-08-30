@@ -34,13 +34,13 @@ export const chapters = [
     href: "/rails",
     kicker: "02",
     title: "What Rails is",
-    blurb: "Convention over configuration. MVC, Active Record, Hotwire — the full-stack default that still ships product.",
+    blurb: "Why use it: happiness, convention, omakase, one monolith, Hotwire, Rails 8 without a PaaS. Plus the architecture and the code.",
   },
   {
     href: "/deploy",
     kicker: "03",
     title: "Shipping Rails",
-    blurb: "Kamal, a VPS, Hatchbox, Fly, Render. And an honest answer: does Vercel host Ruby on Rails?",
+    blurb: "Can you deploy Rails on Vercel? No — not the monolith. Kamal, Hatchbox, Fly, Render, and why the process model matters.",
   },
   {
     href: "/omarchy",
