@@ -12,6 +12,7 @@ export type NavItem = {
 export const nav: NavItem[] = [
   { href: "/ruby", label: "Ruby" },
   { href: "/rails", label: "Rails" },
+  { href: "/architecture", label: "Architecture" },
   { href: "/deploy", label: "Deploy" },
   {
     href: "/omarchy",
@@ -21,6 +22,8 @@ export const nav: NavItem[] = [
       { href: "/omarchy/hermes", label: "Hermes" },
     ],
   },
+  { href: "/demo", label: "Demos" },
+  { href: "/map", label: "Map" },
 ];
 
 export const chapters = [
@@ -59,5 +62,29 @@ export const chapters = [
     kicker: "06",
     title: "Hermes on Omarchy",
     blurb: "Nous Hermes with an Omarchy skill — Hyprland, themes, and safety boundaries the agent actually understands.",
+  },
+  {
+    href: "/architecture",
+    kicker: "07",
+    title: "Full architecture",
+    blurb: "The Rails 8 tree, the request path, processes, and split deploys — folders as the framework.",
+  },
+  {
+    href: "/doctrine",
+    kicker: "08",
+    title: "The Rails Doctrine",
+    blurb: "Nine pillars from rubyonrails.org/doctrine. Happiness, convention, omakase, sharp knives.",
+  },
+  {
+    href: "/demo",
+    kicker: "09",
+    title: "Replit-style demos",
+    blurb: "In-browser sandboxes: edit Ruby, routes, ERB, Kamal. Press Run. Not MRI. Not rails s.",
+  },
+  {
+    href: "/code",
+    kicker: "10",
+    title: "Full files",
+    blurb: "Gemfile, routes, model, controller, view, job, mailer, Dockerfile, deploy.yml.",
   },
 ];

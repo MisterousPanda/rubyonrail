@@ -7,6 +7,9 @@ const links = [
   { href: "/omarchy", label: "Omarchy" },
   { href: "/omarchy/cursor", label: "Cursor" },
   { href: "/omarchy/hermes", label: "Hermes" },
+  { href: "/omarchy/walker", label: "Walker" },
+  { href: "/omarchy/t2", label: "T2 Mac" },
+  { href: "/demo/walker", label: "Walker demo" },
 ];
 
 export function OmarchySubnav() {

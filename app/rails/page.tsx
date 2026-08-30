@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Architecture } from "@/components/architecture";
 import { CodeBlock } from "@/components/code-block";
+import { LibraryGrid } from "@/components/library-grid";
 import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
@@ -100,6 +101,7 @@ const walk = [
 
 export default function RailsPage() {
   return (
+    <>
     <article className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <PageHeader
         kicker="Chapter 02 · The framework"
@@ -311,5 +313,7 @@ end`}
         </Link>
       </p>
     </article>
+    <LibraryGrid section="rails" />
+    </>
   );
 }
