@@ -20,9 +20,11 @@ export default function CursorOnOmarchyPage() {
 
       <div className="prose-essay mt-10 max-w-3xl text-[17px] leading-8 text-ink/80">
         <p>
-          Open the Omarchy menu with{" "}
-          <code className="font-mono text-[14px] text-ruby">Super + Space</code>{" "}
-          (or Super + Alt + Space, depending on your generation of bindings).
+          Open the Omarchy Menu with{" "}
+          <code className="font-mono text-[14px] text-ruby">
+            Super + Alt + Space
+          </code>
+          . (Super + Space is Walker, the app launcher — a different chair.)
           Walk <strong>Install → Editor → Cursor</strong>. Theme matching is
           offered for Cursor the same way it is for VS Code, Zed, and Helix.
           Set the system default under{" "}
@@ -98,9 +100,9 @@ export default function CursorOnOmarchyPage() {
           code={`# From a project, when you want the published skill locally
 npx skills add https://github.com/basecamp/omarchy --skill omarchy
 
-# Official install path stays the menu:
-# Super + Space  →  Install  →  Editor  →  Cursor
-# Super + Alt + Space   (same menu, older/alternate binding)
+# Official install path stays the Omarchy Menu:
+# Super + Alt + Space  →  Install  →  Editor  →  Cursor
+# Super + Space        →  Walker (app launcher), not the menu
 
 # Two defaults, two jobs:
 # Setup → Defaults → Editor   →  Cursor the IDE

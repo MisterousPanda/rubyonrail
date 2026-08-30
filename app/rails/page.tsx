@@ -101,7 +101,16 @@ export default function RailsPage() {
           That is architecture as kindness. Layers are visible. The request
           walks a straight line. Twenty years later the same line still holds:
           route, controller, model, view — plus the jobs and cables a real
-          product grows.
+          product grows. Rails 8’s default is the Solid trifecta — Queue,
+          Cache, Cable — plus Kamal 2, so a new app can ship without renting
+          a PaaS or standing up Redis on day one.{" "}
+          <a
+            className="underline decoration-ruby/40 underline-offset-3"
+            href="https://rubyonrails.org/doctrine"
+          >
+            The Rails Doctrine
+          </a>{" "}
+          is still the why: happiness, convention, omakase.
         </p>
         <p>
           Hotwire (Turbo + Stimulus) is the honest counter-offer to the SPA

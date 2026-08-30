@@ -18,9 +18,9 @@ const anatomy = [
   },
   {
     name: "The menu",
-    kicker: "Super + Space",
+    kicker: "Super + Alt + Space",
     detail:
-      "The omakase move. Super + Space opens the system menu: install an editor, pick a theme, set a default agent. You live in a finished desk, not a wiki of keybinds.",
+      "The omakase move. Super + Space is Walker, the app launcher. Super + Alt + Space is the Omarchy Menu: install an editor, pick a theme, set a default agent. You live in a finished desk, not a wiki of keybinds.",
   },
   {
     name: "Terminals",
@@ -65,9 +65,16 @@ export default function OmarchyPage() {
             basecamp/omarchy
           </a>
           . The pitch is the same instinct as Rails: omakase. Hyprland for the
-          compositor, a system menu on Super + Space, mise for toolchains,
-          Neovim as the default editor, and defaults you can live in on day
-          one.
+          compositor, Walker on Super + Space, the Omarchy Menu on Super +
+          Alt + Space, mise for toolchains, Neovim as the default editor, and
+          defaults you can live in on day one. Manual:{" "}
+          <a
+            className="underline decoration-teal underline-offset-3"
+            href="https://learn.omacom.io/2/the-omarchy-manual"
+          >
+            learn.omacom.io
+          </a>
+          .
         </p>
         <p>
           This page is written from that desk — specifically from a T2 Mac
@@ -79,7 +86,8 @@ export default function OmarchyPage() {
       <section className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Stat k="Compositor" v="Hyprland (Wayland)" />
         <Stat k="Base" v="Arch Linux" />
-        <Stat k="Menu" v="Super + Space" />
+        <Stat k="Menu" v="Super + Alt + Space" />
+        <Stat k="Launcher" v="Walker · Super + Space" />
         <Stat k="Editors" v="Neovim default · Cursor optional" />
         <Stat k="Agents" v="Lazy-loaded CLIs via mise" />
         <Stat k="T2 Macs" v="linux-t2, audio, Wi-Fi, fans" />
@@ -129,8 +137,13 @@ export default function OmarchyPage() {
           Wi-Fi that works. Fans that listen. Sound that is not a forum
           thread. That is why this homage is typed here: Omarchy did not
           merely boot on T2 silicon. It made the aluminum feel like a
-          workstation again — Hyprland on the glass, Super + Space for the
-          menu, an agent a keystroke away.
+          workstation again — Hyprland on the glass, the menu a chord away,
+          an agent a keystroke away.
+        </p>
+        <p>
+          37signals is moving Ops and Ruby teams onto Omarchy across hardware
+          refresh cycles — not a claim that every desk already switched. The
+          same omakase bet, aimed at the machine you sit down at.
         </p>
       </section>
 
@@ -138,7 +151,8 @@ export default function OmarchyPage() {
         <h2 className="font-serif text-3xl tracking-tight">Two ways to think</h2>
         <p className="mt-3 max-w-2xl text-ink/65">
           Omarchy does not pick a single AI religion. Cursor is the graphical
-          IDE path. Hermes is the agent that can learn the desktop as a skill.
+          IDE path. Hermes is a bring-your-own agent that can learn the desk
+          as a skill — not a bundled ISO default.
         </p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <NavCard

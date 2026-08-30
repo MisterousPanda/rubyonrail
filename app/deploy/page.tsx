@@ -85,7 +85,15 @@ export default function DeployPage() {
             The framework list includes{" "}
             <code className="font-mono text-[13px] text-ruby">ruby</code>{" "}
             (think Jekyll-style or function apps). It does not treat a full
-            Rails monolith the way it treats this Next.js site.{" "}
+            Rails monolith the way it treats this Next.js site. Vercel’s own{" "}
+            <a
+              className="underline decoration-teal underline-offset-3"
+              href="https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications"
+            >
+              knowledge base
+            </a>{" "}
+            describes the honest pattern: Rails as a headless API elsewhere,
+            Next.js (or another frontend) on Vercel.{" "}
             <em>This homage is Next.js on Vercel on purpose.</em>
           </p>
         </div>

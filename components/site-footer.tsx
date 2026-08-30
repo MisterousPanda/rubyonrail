@@ -31,6 +31,13 @@ export function SiteFooter() {
             >
               Vercel Ruby runtime
             </a>
+            ,{" "}
+            <a
+              className="underline decoration-ruby/70 underline-offset-3 hover:text-paper"
+              href="https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications"
+            >
+              Vercel + Rails
+            </a>
             .
           </p>
         </div>

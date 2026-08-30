@@ -28,8 +28,13 @@ export default function HermesOnOmarchyPage() {
           <code className="font-mono text-[14px] text-ruby">
             omarchy-mise-install
           </code>
-          . Hermes fits that invite-and-wrap pattern. Treat it as a guest you
-          seated, not a daemon the installer forced on you.
+          . The launchers people hit first are often{" "}
+          <code className="font-mono text-[14px] text-ruby">c</code> / OpenCode
+          and{" "}
+          <code className="font-mono text-[14px] text-ruby">cx</code> / Claude
+          Code. Hermes — Nous Research’s agent — fits the same invite-and-wrap
+          pattern. Treat it as a guest you seated, not a daemon the installer
+          forced on you.
         </p>
         <p>
           The Omarchy skill — maintained with the desktop, adapted into Hermes’
