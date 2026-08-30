@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3ecdf;
+  --paper-2: #e8dcc8;
+  --ink: #16120e;
+  --ruby: #b42318;
+  --teal: #0f6b5c;
+  --gold: #a8843a;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ruby: var(--ruby);
+  --color-teal: var(--teal);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-instrument);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(180, 35, 24, 0.08), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(15, 107, 92, 0.1), transparent 50%),
+    var(--paper);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100%;
+}
+
+::selection {
+  background: #b42318;
+  color: #f3ecdf;
+}
+
+.prose-essay p + p {
+  margin-top: 1.15rem;
+}
