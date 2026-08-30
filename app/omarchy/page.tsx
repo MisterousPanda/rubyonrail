@@ -9,6 +9,39 @@ export const metadata: Metadata = {
     "DHH’s beautiful, fun, opinionated Arch Linux + Hyprland desktop — including T2 Mac support.",
 };
 
+const anatomy = [
+  {
+    name: "Hyprland",
+    kicker: "Compositor",
+    detail:
+      "Wayland, tiled, and fast. Omarchy does not ask you to assemble a compositor, a bar, and a wallpaper script. Hyprland is the glass — the rest of the desk is already hung on it.",
+  },
+  {
+    name: "The menu",
+    kicker: "Super + Space",
+    detail:
+      "The omakase move. Super + Space opens the system menu: install an editor, pick a theme, set a default agent. You live in a finished desk, not a wiki of keybinds.",
+  },
+  {
+    name: "Terminals",
+    kicker: "The working surface",
+    detail:
+      "A terminal is not an afterthought. It is where mise hands you a toolchain, where Neovim opens by default, and where an agent CLI appears the first time you type its name.",
+  },
+  {
+    name: "Themes",
+    kicker: "One taste, everywhere",
+    detail:
+      "A theme is a room, not a wallpaper. Switch once and the compositor, the menu, the terminal, and the optional IDEs are supposed to agree — Cursor included, when you install it.",
+  },
+  {
+    name: "Agents",
+    kicker: "First-class, lazy",
+    detail:
+      "Claude, Codex, and the rest arrive as lazy mise stubs. Nothing downloads until you invite it. The desktop treats agents as citizens, not browser tabs you remember to open.",
+  },
+];
+
 export default function OmarchyPage() {
   return (
     <article>
@@ -32,18 +65,14 @@ export default function OmarchyPage() {
             basecamp/omarchy
           </a>
           . The pitch is the same instinct as Rails: omakase. Hyprland for the
-          compositor, a system menu on Super (Space), mise for toolchains, and
-          defaults you can live in on day one.
+          compositor, a system menu on Super + Space, mise for toolchains,
+          Neovim as the default editor, and defaults you can live in on day
+          one.
         </p>
         <p>
-          On a T2 Mac it is not a science project anymore. The installer
-          detects Apple hardware, pulls the patched{" "}
-          <code className="font-mono text-[14px] text-ruby">linux-t2</code>{" "}
-          kernel, Broadcom firmware, T2 audio, and{" "}
-          <code className="font-mono text-[14px] text-ruby">t2fanrd</code>. The
-          Touch Bar gets Boot Camp-style kernel support. Intel Macs only —
-          M-series is a different story. The machine that felt finished in 2019
-          can feel new again.
+          This page is written from that desk — specifically from a T2 Mac
+          that Omarchy made feel finished again. The homage is unofficial. The
+          machine is not.
         </p>
       </div>
 
@@ -56,8 +85,57 @@ export default function OmarchyPage() {
         <Stat k="T2 Macs" v="linux-t2, audio, Wi-Fi, fans" />
       </section>
 
+      <section className="mt-16" aria-labelledby="desk-anatomy-heading">
+        <h2 id="desk-anatomy-heading" className="font-serif text-3xl tracking-tight">
+          Desk anatomy
+        </h2>
+        <p className="mt-3 max-w-2xl text-ink/65">
+          Five pieces you actually touch. The ISO is Arch. The feeling is a
+          room someone already arranged.
+        </p>
+        <ol className="mt-8 grid border border-ink/12 sm:grid-cols-2 lg:grid-cols-3">
+          {anatomy.map((piece, index) => (
+            <li
+              key={piece.name}
+              className="border-ink/12 p-6 border-b last:border-b-0 sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+4)]:border-b-0 lg:last:col-span-2"
+            >
+              <span className="font-mono text-[11px] tracking-[0.22em] text-ruby uppercase">
+                {String(index + 1).padStart(2, "0")} · {piece.kicker}
+              </span>
+              <h3 className="mt-3 font-serif text-2xl">{piece.name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/65">
+                {piece.detail}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="prose-essay mt-16 max-w-3xl text-[17px] leading-8 text-ink/80">
+        <h2 className="font-serif text-3xl tracking-tight text-ink">
+          A T2 Mac, loved on purpose
+        </h2>
+        <p className="mt-5">
+          On a T2 Mac it is not a science project anymore. The installer
+          detects Apple hardware, pulls the patched{" "}
+          <code className="font-mono text-[14px] text-ruby">linux-t2</code>{" "}
+          kernel, Broadcom firmware, T2 audio, and{" "}
+          <code className="font-mono text-[14px] text-ruby">t2fanrd</code>. The
+          Touch Bar gets Boot Camp-style kernel support. Intel Macs only —
+          M-series is not directly supported, and that is the honest line.
+          The machine that felt finished in 2019 can feel new again.
+        </p>
+        <p>
+          Wi-Fi that works. Fans that listen. Sound that is not a forum
+          thread. That is why this homage is typed here: Omarchy did not
+          merely boot on T2 silicon. It made the aluminum feel like a
+          workstation again — Hyprland on the glass, Super + Space for the
+          menu, an agent a keystroke away.
+        </p>
+      </section>
+
       <section className="mt-16">
-        <h2 className="font-serif text-3xl tracking-tight">Subpages</h2>
+        <h2 className="font-serif text-3xl tracking-tight">Two ways to think</h2>
         <p className="mt-3 max-w-2xl text-ink/65">
           Omarchy does not pick a single AI religion. Cursor is the graphical
           IDE path. Hermes is the agent that can learn the desktop as a skill.

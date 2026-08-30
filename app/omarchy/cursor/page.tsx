@@ -46,6 +46,32 @@ export default function CursorOnOmarchyPage() {
 
       <section className="mt-16 max-w-3xl text-[17px] leading-8 text-ink/80">
         <h2 className="font-serif text-3xl tracking-tight text-ink">
+          The IDE and the agent are two chairs
+        </h2>
+        <p className="mt-5">
+          Cursor on this desk is the graphical editor — the same window you
+          already think in. Making it the system default is a separate, quieter
+          act:{" "}
+          <strong>Setup → Defaults → Editor</strong>. After that, “open this
+          file” means Cursor, not a side quest through random AppImages. Theme
+          matching rides the same path as VS Code, Zed, and Helix: change the
+          Omarchy theme and the IDE should follow, so the chrome and the code
+          do not argue about color.
+        </p>
+        <p className="mt-5">
+          The default CLI agent is a different chair.{" "}
+          <code className="font-mono text-[14px] text-ruby">
+            Super + Shift + Ctrl + A
+          </code>{" "}
+          launches that agent — the lazy mise stub Omarchy already treats as
+          first-class — not Cursor itself. You can live in Cursor all day and
+          still keep a CLI harness on the chord. Confusing the two is how
+          people end up hunting for an IDE keybind that was never the story.
+        </p>
+      </section>
+
+      <section className="mt-16 max-w-3xl text-[17px] leading-8 text-ink/80">
+        <h2 className="font-serif text-3xl tracking-tight text-ink">
           The Omarchy skill in Cursor
         </h2>
         <p className="mt-5">
@@ -73,7 +99,15 @@ export default function CursorOnOmarchyPage() {
 npx skills add https://github.com/basecamp/omarchy --skill omarchy
 
 # Official install path stays the menu:
-# Super + Space  →  Install  →  Editor  →  Cursor`}
+# Super + Space  →  Install  →  Editor  →  Cursor
+# Super + Alt + Space   (same menu, older/alternate binding)
+
+# Two defaults, two jobs:
+# Setup → Defaults → Editor   →  Cursor the IDE
+# Super + Shift + Ctrl + A    →  default CLI agent (not the IDE)
+
+# Wayland/Electron footnote if first paint is slow:
+#   --use-gl=egl`}
         />
       </div>
 

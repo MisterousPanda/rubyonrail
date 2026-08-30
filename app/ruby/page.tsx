@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CodeBlock } from "@/components/code-block";
 import { PageHeader } from "@/components/page-header";
 
@@ -54,6 +55,9 @@ export default function RubyPage() {
           <Fact label="Author" value="Yukihiro “Matz” Matsumoto" />
           <Fact label="First public" value="1995" />
           <Fact label="North star" value="Programmer happiness" />
+          <Fact label="License" value="Open source from the start" />
+          <Fact label="Ontology" value="Everything is an object" />
+          <Fact label="VM" value="YARV, then YJIT" />
           <Fact label="Runtime" value="MRI, YJIT, and friends" />
           <Fact label="Spirit" value="Objects, blocks, DSLs" />
         </aside>
@@ -87,7 +91,67 @@ end
 puts Recipe.new.greeting("the T2 Mac")
 # => A warm plate for the T2 Mac.`}
         />
+        <CodeBlock
+          title="letter.rb"
+          code={`class Letter
+  def to(name)
+    @name = name
+    self
+  end
+
+  def write
+    yield @name
+  end
+end
+
+note = Letter.new.to("the next reader")
+puts note.write { |who| "Hello, #{who}. Stay curious." }
+# => Hello, the next reader. Stay curious.`}
+        />
       </div>
+
+      <section className="mt-16 border border-ink/10 bg-paper-2/50 p-8 sm:p-10">
+        <p className="font-mono text-[11px] tracking-[0.2em] text-gold uppercase">
+          Why this language made Rails possible
+        </p>
+        <h2 className="mt-3 max-w-3xl font-serif text-3xl tracking-tight text-ink sm:text-4xl">
+          A framework can sound like speech only if the language already does.
+        </h2>
+        <div className="prose-essay mt-6 max-w-3xl text-[17px] leading-8 text-ink/80">
+          <p>
+            Rails did not invent kindness. It inherited a language that treats
+            method names as sentences and blocks as asides.{" "}
+            <code className="font-mono text-[14px] text-ruby">
+              has_many :comments
+            </code>
+            ,{" "}
+            <code className="font-mono text-[14px] text-ruby">
+              validates :title, presence: true
+            </code>
+            ,{" "}
+            <code className="font-mono text-[14px] text-ruby">
+              resources :articles
+            </code>{" "}
+            — those lines work because Ruby lets a library grow a dialect
+            without leaving the file. Open classes, symbols, and{" "}
+            <code className="font-mono text-[14px] text-ruby">yield</code>{" "}
+            turned configuration into conversation.
+          </p>
+          <p>
+            Matz optimized for the person at the keyboard. DHH optimized for
+            the person shipping the product. Same bet, next chapter: a default
+            so complete you can spend taste on the work, not the glue.
+          </p>
+        </div>
+        <p className="mt-8">
+          <Link
+            href="/rails"
+            className="font-mono text-sm tracking-[0.14em] text-teal uppercase"
+          >
+            Next: The craft of Rails →
+          </Link>
+        </p>
+      </section>
     </article>
   );
 }

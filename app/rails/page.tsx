@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Architecture } from "@/components/architecture";
 import { CodeBlock } from "@/components/code-block";
 import { PageHeader } from "@/components/page-header";
@@ -42,6 +43,34 @@ const layers = [
   },
 ];
 
+const walk = [
+  {
+    name: "The browser",
+    detail:
+      "Someone hits GET /articles/hello-rails. Cookies, Accept: text/html, maybe a Turbo-Frame header. No app-owned JavaScript router has to invent that URL — it is just HTTP.",
+  },
+  {
+    name: "routes.rb",
+    detail:
+      "The mapper already knows resources :articles. That path is ArticlesController#show. Convention drew the line; you only write the exception.",
+  },
+  {
+    name: "The controller",
+    detail:
+      "A thin object permits nothing it does not need, finds the record, and decides the response. HTML by default. A Turbo Stream if the form asked for one. JSON if you truly have an API client.",
+  },
+  {
+    name: "The model",
+    detail:
+      "Active Record is the table and the object. Article.find_by!(slug:) hits articles, runs validations you declared beside the data, and walks has_many :comments without a separate repository layer.",
+  },
+  {
+    name: "View, then Turbo",
+    detail:
+      "show.html.erb renders HTML in a layout. Turbo Drive swaps the body. A stream can append a comment without a page load. The server still owns the markup.",
+  },
+];
+
 export default function RailsPage() {
   return (
     <article className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
@@ -74,7 +103,45 @@ export default function RailsPage() {
           route, controller, model, view — plus the jobs and cables a real
           product grows.
         </p>
+        <p>
+          Hotwire (Turbo + Stimulus) is the honest counter-offer to the SPA
+          default. A React or Vue shell wins when the UI is a long-lived client:
+          offline caches, pixel-perfect canvases, an app that is mostly state
+          machines. Most product software is still forms, lists, and
+          authorization. For that, shipping a JSON API and a second runtime is
+          a tax, not a virtue. Rails 7 and 8 keep rendering HTML on the server
+          and let Turbo Drive, Frames, and Streams refresh what changed. You
+          can still expose JSON. You just do not start there.
+        </p>
       </div>
+
+      <section className="mt-16" aria-labelledby="request-walk-heading">
+        <h2
+          id="request-walk-heading"
+          className="font-serif text-3xl tracking-tight"
+        >
+          A request, walked
+        </h2>
+        <p className="mt-3 max-w-2xl text-[17px] leading-8 text-ink/70">
+          Same line as the grid below — told as a single trip from the tab to
+          the template. This is the 2004 shape, still the Rails 8 shape.
+        </p>
+        <ol className="mt-8 max-w-3xl divide-y divide-ink/12 border border-ink/12">
+          {walk.map((step, index) => (
+            <li key={step.name} className="flex gap-5 p-6 sm:gap-8">
+              <span className="font-mono text-[11px] tracking-[0.22em] text-ruby uppercase">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="font-serif text-2xl">{step.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/65">
+                  {step.detail}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       <div className="mt-16">
         <Architecture title="A request through the monolith" layers={layers} />
@@ -147,7 +214,25 @@ end`}
 <%= turbo_stream_from @article %>
 <%= render @article.comments %>`}
         />
+        <CodeBlock
+          title="app/views/comments/_form.html.erb"
+          language="erb"
+          code={`<%= form_with model: [@article, Comment.new] do |form| %>
+  <%= form.label :body, "Add a comment" %>
+  <%= form.text_area :body, rows: 3, required: true %>
+  <%= form.submit "Post comment" %>
+<% end %>`}
+        />
       </div>
+
+      <p className="mt-16">
+        <Link
+          href="/deploy"
+          className="font-mono text-sm tracking-[0.14em] text-teal uppercase"
+        >
+          Next: Shipping Rails →
+        </Link>
+      </p>
     </article>
   );
 }
