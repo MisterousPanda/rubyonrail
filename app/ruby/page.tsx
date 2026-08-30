@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CodeBlock } from "@/components/code-block";
+import { LibraryGrid } from "@/components/library-grid";
 import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function RubyPage() {
   return (
+    <>
     <article className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <PageHeader
         kicker="Chapter 01 · The language"
@@ -153,6 +155,8 @@ puts note.write { |who| "Hello, #{who}. Stay curious." }
         </p>
       </section>
     </article>
+    <LibraryGrid section="ruby" />
+    </>
   );
 }
 

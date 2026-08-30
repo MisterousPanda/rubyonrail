@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Architecture } from "@/components/architecture";
 import { CodeBlock } from "@/components/code-block";
+import { LibraryGrid } from "@/components/library-grid";
 import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
@@ -9,6 +10,33 @@ export const metadata: Metadata = {
   description:
     "Ruby on Rails: convention over configuration, MVC, Active Record, and the architecture of a full-stack default.",
 };
+
+const reasons = [
+  {
+    title: "Programmer happiness",
+    body: "The first constraint is how Tuesday morning feels. Rails exists so you ship product, not glue — the same bet Matz made for Ruby.",
+  },
+  {
+    title: "Convention over configuration",
+    body: "A Post talks to posts. The seven REST actions arrive with resources :posts. You write the exception, not the skeleton.",
+  },
+  {
+    title: "The menu is omakase",
+    body: "Router, ORM, mailer, jobs, cable, tests, generators — one curated stack. You spend taste on the product, not on choosing 50 libraries.",
+  },
+  {
+    title: "One process, a whole product",
+    body: "HTML, JSON, background work, email, and WebSockets live in the same application. No second runtime required to post a comment.",
+  },
+  {
+    title: "Hotwire, not a mandatory SPA",
+    body: "The server still renders HTML. Turbo Drive, Frames, and Streams make it feel instant. You can expose an API. You do not have to start there.",
+  },
+  {
+    title: "Rails 8 ships without a PaaS",
+    body: "Solid Queue, Cache, and Cable plus Kamal 2. A new app can go to a VPS you own — no Redis tax, no landlord, on day one.",
+  },
+];
 
 const layers = [
   {
@@ -73,6 +101,7 @@ const walk = [
 
 export default function RailsPage() {
   return (
+    <>
     <article className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <PageHeader
         kicker="Chapter 02 · The framework"
@@ -123,6 +152,47 @@ export default function RailsPage() {
           can still expose JSON. You just do not start there.
         </p>
       </div>
+
+      <section className="mt-16" aria-labelledby="why-rails-heading">
+        <p className="font-mono text-[11px] tracking-[0.22em] text-ruby uppercase">
+          Why teams still pick it
+        </p>
+        <h2
+          id="why-rails-heading"
+          className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl"
+        >
+          Advantages — the reasons to use Ruby on Rails
+        </h2>
+        <p className="mt-3 max-w-2xl text-[17px] leading-8 text-ink/70">
+          Not a feature dump. Six bets that still hold: happiness, convention,
+          a finished menu, one monolith, HTML over the wire, and a deploy path
+          that does not require Vercel.
+        </p>
+        <ol className="mt-8 grid gap-4 sm:grid-cols-2">
+          {reasons.map((reason, index) => (
+            <li
+              key={reason.title}
+              className="border border-ink/12 bg-paper-2/40 p-6"
+            >
+              <span className="font-mono text-[11px] tracking-[0.22em] text-ruby uppercase">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-3 font-serif text-2xl">{reason.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/65">
+                {reason.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-8">
+          <Link
+            href="/deploy"
+            className="font-mono text-sm tracking-[0.14em] text-ruby uppercase"
+          >
+            Can you deploy that monolith on Vercel? No. →
+          </Link>
+        </p>
+      </section>
 
       <section className="mt-16" aria-labelledby="request-walk-heading">
         <h2
@@ -243,5 +313,7 @@ end`}
         </Link>
       </p>
     </article>
+    <LibraryGrid section="rails" />
+    </>
   );
 }

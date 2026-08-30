@@ -55,7 +55,19 @@ export default function HomePage() {
             href="/rails"
             className="border border-ink/20 px-5 py-2.5 font-mono text-[11px] tracking-[0.18em] text-ink uppercase hover:border-ruby hover:text-ruby"
           >
-            Read Rails
+            Why Rails
+          </Link>
+          <Link
+            href="/deploy"
+            className="border border-ruby/40 px-5 py-2.5 font-mono text-[11px] tracking-[0.18em] text-ruby uppercase hover:bg-ruby hover:text-paper"
+          >
+            Rails on Vercel? No
+          </Link>
+          <Link
+            href="/demo"
+            className="border border-teal/40 px-5 py-2.5 font-mono text-[11px] tracking-[0.18em] text-teal uppercase hover:bg-teal hover:text-paper"
+          >
+            Replit-style demos
           </Link>
         </div>
       </section>
@@ -181,7 +193,7 @@ export default function HomePage() {
         className="mx-auto max-w-6xl px-5 py-20 sm:px-8"
       >
         <p className="font-mono text-[11px] tracking-[0.22em] text-ink/45 uppercase">
-          Six chapters
+          Hubs, library, sandboxes
         </p>
         <h2
           id="chapters-heading"

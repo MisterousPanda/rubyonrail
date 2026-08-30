@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CodeBlock } from "@/components/code-block";
+import { LibraryGrid } from "@/components/library-grid";
 import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
@@ -44,12 +45,57 @@ const comparison = [
 
 export default function DeployPage() {
   return (
+    <>
     <article className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <PageHeader
         kicker="Chapter 03 · Shipping"
         title="Rails wants a process. Vercel wants a function."
         lede="You can absolutely deploy Rails — DHH’s own path is Kamal onto a VPS you own. You can run thin Ruby on Vercel. Those are not the same sentence. This page keeps them honest."
       />
+
+      <section
+        aria-labelledby="vercel-verdict-heading"
+        className="mt-12 border-2 border-ruby bg-ruby text-paper"
+      >
+        <div className="grid gap-6 p-7 sm:p-10 lg:grid-cols-[auto_1fr] lg:items-center">
+          <p className="font-serif text-7xl leading-none tracking-tight sm:text-8xl">
+            No.
+          </p>
+          <div>
+            <h2
+              id="vercel-verdict-heading"
+              className="font-serif text-3xl tracking-tight sm:text-4xl"
+            >
+              You cannot deploy a full Ruby on Rails app on Vercel.
+            </h2>
+            <p className="mt-4 max-w-2xl text-[17px] leading-8 text-paper/85">
+              Vercel does not host{" "}
+              <code className="font-mono text-[14px] text-paper">
+                ./bin/rails server
+              </code>
+              . It will not run Puma, Active Record migrations, Action Cable,
+              or Solid Queue as one monolith. It will run{" "}
+              <strong>this Next.js site</strong>, and it will run a thin{" "}
+              <a
+                className="underline decoration-paper/50 underline-offset-3"
+                href="https://vercel.com/docs/functions/runtimes/ruby"
+              >
+                Ruby Function
+              </a>{" "}
+              in{" "}
+              <code className="font-mono text-[14px] text-paper">api/*.rb</code>
+              . That is Ruby, not Rails. Official stance:{" "}
+              <a
+                className="underline decoration-paper/50 underline-offset-3"
+                href="https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications"
+              >
+                Rails as an API elsewhere, frontend on Vercel
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="mt-14 grid gap-6 lg:grid-cols-2">
         <div className="border border-teal/30 bg-teal/8 p-7">
@@ -326,6 +372,8 @@ end
         </p>
       </section>
     </article>
+    <LibraryGrid section="deploy" />
+    </>
   );
 }
 

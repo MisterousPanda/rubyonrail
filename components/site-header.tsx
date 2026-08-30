@@ -20,7 +20,7 @@ export function SiteHeader() {
         <Link href="/" className="font-serif text-xl tracking-tight text-ink">
           Ruby<span className="text-ruby">/</span>Omarchy
         </Link>
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-4 lg:flex lg:gap-6" aria-label="Primary">
           {nav.map((item) => (
             <div key={item.href} className="relative">
               <Link
@@ -38,7 +38,7 @@ export function SiteHeader() {
         </nav>
         <button
           type="button"
-          className="font-mono text-[11px] tracking-[0.18em] text-ink/70 uppercase md:hidden"
+          className="font-mono text-[11px] tracking-[0.18em] text-ink/70 uppercase lg:hidden"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
@@ -47,7 +47,7 @@ export function SiteHeader() {
       </div>
       {open ? (
         <nav
-          className="border-t border-ink/10 px-5 py-4 md:hidden"
+          className="border-t border-ink/10 px-5 py-4 lg:hidden"
           aria-label="Mobile"
         >
           <ul className="grid gap-3">

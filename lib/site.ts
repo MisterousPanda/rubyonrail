@@ -12,6 +12,7 @@ export type NavItem = {
 export const nav: NavItem[] = [
   { href: "/ruby", label: "Ruby" },
   { href: "/rails", label: "Rails" },
+  { href: "/architecture", label: "Architecture" },
   { href: "/deploy", label: "Deploy" },
   {
     href: "/omarchy",
@@ -21,6 +22,8 @@ export const nav: NavItem[] = [
       { href: "/omarchy/hermes", label: "Hermes" },
     ],
   },
+  { href: "/demo", label: "Demos" },
+  { href: "/map", label: "Map" },
 ];
 
 export const chapters = [
@@ -34,13 +37,13 @@ export const chapters = [
     href: "/rails",
     kicker: "02",
     title: "What Rails is",
-    blurb: "Convention over configuration. MVC, Active Record, Hotwire — the full-stack default that still ships product.",
+    blurb: "Why use it: happiness, convention, omakase, one monolith, Hotwire, Rails 8 without a PaaS. Plus the architecture and the code.",
   },
   {
     href: "/deploy",
     kicker: "03",
     title: "Shipping Rails",
-    blurb: "Kamal, a VPS, Hatchbox, Fly, Render. And an honest answer: does Vercel host Ruby on Rails?",
+    blurb: "Can you deploy Rails on Vercel? No — not the monolith. Kamal, Hatchbox, Fly, Render, and why the process model matters.",
   },
   {
     href: "/omarchy",
@@ -59,5 +62,29 @@ export const chapters = [
     kicker: "06",
     title: "Hermes on Omarchy",
     blurb: "Nous Hermes with an Omarchy skill — Hyprland, themes, and safety boundaries the agent actually understands.",
+  },
+  {
+    href: "/architecture",
+    kicker: "07",
+    title: "Full architecture",
+    blurb: "The Rails 8 tree, the request path, processes, and split deploys — folders as the framework.",
+  },
+  {
+    href: "/doctrine",
+    kicker: "08",
+    title: "The Rails Doctrine",
+    blurb: "Nine pillars from rubyonrails.org/doctrine. Happiness, convention, omakase, sharp knives.",
+  },
+  {
+    href: "/demo",
+    kicker: "09",
+    title: "Replit-style demos",
+    blurb: "In-browser sandboxes: edit Ruby, routes, ERB, Kamal. Press Run. Not MRI. Not rails s.",
+  },
+  {
+    href: "/code",
+    kicker: "10",
+    title: "Full files",
+    blurb: "Gemfile, routes, model, controller, view, job, mailer, Dockerfile, deploy.yml.",
   },
 ];

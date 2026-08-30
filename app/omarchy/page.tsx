@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LibraryGrid } from "@/components/library-grid";
 import { NavCard } from "@/components/nav-card";
 import { PageHeader } from "@/components/page-header";
 
@@ -175,6 +176,7 @@ export default function OmarchyPage() {
           Cursor on Omarchy →
         </Link>
       </p>
+      <LibraryGrid section="omarchy" contained />
     </article>
   );
 }
